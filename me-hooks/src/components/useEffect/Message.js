@@ -4,8 +4,10 @@ const Message = () => {
 
 
  //This is a example unmount component.
+
+
  const [coors, setcoors] = useState({x:0,y:0})
- const {x,y }= coors
+ const { x,y }= coors
 
   useEffect(() => {
 
