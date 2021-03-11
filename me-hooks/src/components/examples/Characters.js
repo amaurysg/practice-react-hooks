@@ -1,30 +1,34 @@
 import React from 'react'
-import useFetch from '../../hooks/useFetch'
+import useFetchCharacters from '../../hooks/useFetchCharacters'
+// import chara from '../../data/db'
+import './Characters.css'
 
-const Characters = () => {
+const Characters = () => {  
   
-  const {loading, data}= useFetch(`https://www.breakingbadapi.com/api/characters`)
-  
-  console.log('characters',data)
-
-  const {name,img} = !!data && data[4]
-  
-  // const {name, img }= !!data && data[0]
-   console.log(name, img)
-
-
-
+ const data = useFetchCharacters('https://www.breakingbadapi.com/api/characters') 
  
 
-
-
   return (
-    <div>
-          <p> Characters </p> 
-          <ul>
-           <li> {name}</li>
-           <img src={img}/>
-          </ul>
+    <div className="card__container">
+       
+          
+              {
+                data.map((c,i)=>{
+                  
+                  return(
+                    <>
+
+                      <div className="card__character" key={i}>
+                          <h5>{c.name}</h5>
+                          <img src={c.img} alt={c.name}/>
+                          <p >{c.nickname}</p>
+                      </div >
+                    </>  
+                  )
+                } )
+              }
+              
+        
           
     </div>
   )

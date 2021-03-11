@@ -1,0 +1,27 @@
+.card__container {
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+  background-color: #105036;
+}
+
+.card__character {
+  height: 250px;
+  width: 180px;
+  border: 1px solid green;
+  border-radius: 15px;
+  margin: 5px;
+  align-items: center;
+  text-align: center;
+}
+.card__character h5,
+p {
+  color: white;
+  margin-top: 5px;
+}
+
+.card__character img {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
+}
