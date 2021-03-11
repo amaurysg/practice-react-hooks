@@ -6,23 +6,24 @@ const useFetch = (url) => {
 
   useEffect(() => {
     //Reset values 
-    setState({data:null, loading:true, error:null})
+    // setState({data:null, loading:true, error:null})
 
     //Fetch
     fetch(url)
       .then(resp => resp.json())
       .then(data =>{
         setState({
-          data,
+        
           loading: false,
-          error: null
+          error: null,
+          data
           
         })
       })
 //In action only when url change
   }, [url])
 
-  
+
   return state
 }
 

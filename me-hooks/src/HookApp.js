@@ -1,4 +1,5 @@
 import React from 'react'
+import Characters from './components/examples/Characters'
 import MultipleCustomsHooks from './components/examples/MultipleCustomsHooks'
 /* import FormCustomsHooks from './components/useEffect/FormCustomsHooks'
 import Message from './components/useEffect/Message'
@@ -18,6 +19,8 @@ const HookApp = () => {
       <FormCustomsHooks/> */}
 
       <MultipleCustomsHooks/>
+      <hr/>
+      <Characters/>
      
     </div>
   )

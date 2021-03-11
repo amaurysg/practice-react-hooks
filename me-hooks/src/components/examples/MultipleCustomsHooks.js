@@ -9,11 +9,11 @@ const MultipleCustomsHooks = () => {
   const {counter, inc} =  useCounter(1)
   const {loading, data} =  useFetch(`https://www.breakingbadapi.com/api/quotes/${counter}`)
 
+  console.log('data fetch1', data)
   const {author, quote} = !!data && data[0]
 
-
- console.log(loading, data)
- console.log(author, quote)
+//  console.log(loading, data)
+//  console.log(author, quote)
   
 
   return (
