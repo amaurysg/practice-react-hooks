@@ -1,4 +1,5 @@
 import React from 'react'
+import Layout from './components/useLayoutEffect/RealLayoutEffect'
 // import Characters from './components/examples/Characters'
 // import MultipleCustomsHooks from './components/examples/MultipleCustomsHooks'
 // import Focus from './components/useRef/Focus'
@@ -26,7 +27,8 @@ const HookApp = () => {
       {/* <hr/>
       <Focus/> */}
 
-      <RealExampleUseRef/>
+      {/* <RealExampleUseRef/> */}
+      <Layout/>
      
     </div>
   )

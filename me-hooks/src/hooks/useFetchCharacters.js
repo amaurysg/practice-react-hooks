@@ -11,7 +11,7 @@ const useFetchCharacters =  (url) => {
     //Fetch
     const response = await fetch(url)
     const data = await response.json()
-    console.log('data-response', data)
+    // console.log('data-response', data)
     setState(data)
    
 //In action only when url change
