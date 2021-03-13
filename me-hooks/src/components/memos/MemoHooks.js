@@ -13,7 +13,7 @@ const MemoHooks = () => {
   
   return (
     <div>
-        <h1>MemoHooks</h1>
+        <h1>MemoHook</h1>
         <h3>Counter  <small> {counter }</small> </h3>
        
        <p> {memoProceso} </p>
