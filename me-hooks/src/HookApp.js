@@ -1,4 +1,6 @@
 import React from 'react'
+import MemoHooks from './components/memos/MemoHooks'
+import Memorized from './components/memos/Memorized'
 import Layout from './components/useLayoutEffect/RealLayoutEffect'
 // import Characters from './components/examples/Characters'
 // import MultipleCustomsHooks from './components/examples/MultipleCustomsHooks'
@@ -28,7 +30,9 @@ const HookApp = () => {
       <Focus/> */}
 
       {/* <RealExampleUseRef/> */}
-      <Layout/>
+      {/* <Layout/> */}
+      {/* <Memorized /> */}
+      <MemoHooks />
      
     </div>
   )
