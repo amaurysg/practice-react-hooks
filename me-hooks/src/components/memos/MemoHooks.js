@@ -15,6 +15,13 @@ const MemoHooks = () => {
     <div>
         <h1>MemoHook</h1>
         <h3>Counter  <small> {counter }</small> </h3>
+        <nav>
+          <ul>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+          </ul>
+        </nav>
        
        <p> {memoProceso} </p>
         <button className="btn btn-primary" onClick={inc}>+</button>
