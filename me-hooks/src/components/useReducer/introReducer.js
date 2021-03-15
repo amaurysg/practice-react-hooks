@@ -1,5 +1,5 @@
 
-
+//General concepts useReducers
 //1. Created one initial state, in this case is a array witch obj
 const initialState = [{
   id:1, 
