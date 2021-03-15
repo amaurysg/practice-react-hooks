@@ -12,6 +12,7 @@ import Message from './components/useEffect/Message'
 import SimpleForm from './components/useEffect/SimpleForm'
 import CounterApp from './components/useState/CounterApp'
 import CounterCustomsHooks from './components/useState/CounterCustomsHooks' */
+import Padre from './components/memos/07-tarea-memo/Padre'
 
 const HookApp = () => {
   return (
@@ -34,8 +35,9 @@ const HookApp = () => {
       {/* <Layout/> */}
       {/* <Memorized /> */}
       {/* <MemoHooks /> */}
-      <CallBackHook />
-     
+      {/* <CallBackHook /> */}
+      <Padre />
+      
     </div>
   )
 }

@@ -11,7 +11,8 @@ const CallBackHook = () => {
 
   const [counter, setCounter] = useState(10)  
 
-
+  //Notice that used of useCallback for envolved funtions 
+  //Avoid render inncessary 
   const increment = useCallback((num)=>{
     setCounter(counter => counter + num)
   }, [setCounter]) 
@@ -30,7 +31,7 @@ const CallBackHook = () => {
   return (
     <div>
       <h1>CallBack {counter} </h1>
-      {/* here receive a function who const to other component */}
+     {/* Here used the functions  */}
       <ShowIncrement increment={increment} />
       <ShowDecrement decrement={decrement} />
       <hr/>
