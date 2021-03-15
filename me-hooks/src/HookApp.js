@@ -1,4 +1,5 @@
 import React from 'react'
+import CallBackHook from './components/memos/CallBackHook'
 import MemoHooks from './components/memos/MemoHooks'
 import Memorized from './components/memos/Memorized'
 import Layout from './components/useLayoutEffect/RealLayoutEffect'
@@ -32,7 +33,8 @@ const HookApp = () => {
       {/* <RealExampleUseRef/> */}
       {/* <Layout/> */}
       {/* <Memorized /> */}
-      <MemoHooks />
+      {/* <MemoHooks /> */}
+      <CallBackHook />
      
     </div>
   )
