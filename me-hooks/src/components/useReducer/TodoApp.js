@@ -1,25 +1,51 @@
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
+import useForm from '../../hooks/useForm'
 import todoReducer from './todoReducer'
 import './todoStyle.css'
 
-const initialState = [{
-  id: new Date().getTime(),
-  desc : 'Aprender React', 
-  done: false,
-}]
+//Init lo que sea que retorne será el initial state
+const init = () => {
+   //Here 
+    return JSON.parse(localStorage.getItem('todos')) || [] 
 
+//   return [{
+//   id: new Date().getTime(),
+//   desc : 'Aprender React', 
+//   done: false,
+// }]
+}
 
 const TodoApp = () => {
 
-  const [todos, dispatch] = useReducer(todoReducer, initialState)
+  const [todos, dispatch] = useReducer(todoReducer, [], init)
   console.log("To Do's", todos)
+
+  const [{description}, handleInputChange, reset] = useForm({
+    description: ''
+  })
+
+  //useEffect for localstorage, when todos change
+  //Only add when (todos) change 
+  useEffect(() => {
+    //Add to localStorage
+    //Here add to localStorage, we used JSON.stri... because localstorage only read strings
+    localStorage.setItem('todos', JSON.stringify(todos))
+
+  }, [todos])
+
+  console.log(description)
 
   const handleSubmit = (e)=>{
     e.preventDefault();
+
+    //trim() delete spaces in strings
+    if(description.trim().length <=1){
+      return
+    }
     
     const newTodo={
        id: new Date().getTime(),
-       desc : "new tarea", 
+       desc : description, 
        done: false,
       }
 
@@ -29,6 +55,7 @@ const TodoApp = () => {
         payload: newTodo,
       }
       dispatch(action)
+      reset()
     }
 
 
@@ -66,7 +93,8 @@ const TodoApp = () => {
                       className="form-control"
                       type="text"
                       name="description"
-                      // onChange={(e)=>{ e.target.value}}
+                      value={description}
+                      onChange={handleInputChange}
                       placeholder="Description to do..."
                       autoComplete="off"
                       />
