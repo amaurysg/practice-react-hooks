@@ -3,9 +3,11 @@ import useForm from '../../hooks/useForm'
 import todoReducer from './todoReducer'
 import './todoStyle.css'
 
-//Init lo que sea que retorne será el initial state
+//Init lo que sea que retorne será el initialState
+//Init return is initialState
 const init = () => {
-   //Here 
+   //Here captures values from localStorage
+   //captures items from localStore from todos, else capture one array []
     return JSON.parse(localStorage.getItem('todos')) || [] 
 
 //   return [{
@@ -15,15 +17,24 @@ const init = () => {
 // }]
 }
 
+//Initial component 
 const TodoApp = () => {
 
-  const [todos, dispatch] = useReducer(todoReducer, [], init)
+  //Here called useReducer
+  //receive function reducer , initialState, and init (see init above )
+  const [todos, dispatch] = useReducer(todoReducer, [] , init)
+
+  //testing state (todos)
   console.log("To Do's", todos)
 
+  //Here called CustomHooks useForm 
   const [{description}, handleInputChange, reset] = useForm({
     description: ''
   })
-
+  console.log("Description value",description)
+  
+  
+  ///**** ADD LOCAL STORAGE ****///
   //useEffect for localstorage, when todos change
   //Only add when (todos) change 
   useEffect(() => {
@@ -33,28 +44,44 @@ const TodoApp = () => {
 
   }, [todos])
 
-  console.log(description)
+  const handleDelete = (todoId)=>{
+    console.log(todoId)
+    //crear accion 
+    const action = {
+      type: 'delete',
+      payload : todoId
+      
+    }
+    //hacer dispacth 
+    dispatch(action)
+  }
 
+  
+  ///**** handleSubmit form ****////
   const handleSubmit = (e)=>{
     e.preventDefault();
 
     //trim() delete spaces in strings
     if(description.trim().length <=1){
+      //in this case do nothing
       return
     }
-    
+    //Here new object for todos.
     const newTodo={
        id: new Date().getTime(),
        desc : description, 
        done: false,
       }
 
-
+      //Action add, type, payload
       const action = {
         type: 'add', 
         payload: newTodo,
       }
+
+      //Here connect me dispatch with action
       dispatch(action)
+      //Eject function reset FROM useForm
       reset()
     }
 
@@ -77,7 +104,12 @@ const TodoApp = () => {
                                     className="list-group-item"
                                  >
                                     <p className="text-center" >{i + 1} - {todo.desc}</p> 
-                                    <button className="btn btn-danger" > Delete</button>
+                                    <button 
+                                      className="btn btn-danger" 
+                                      onClick={ ()=> handleDelete(todo.id)}                   
+                                    > 
+                                    Delete
+                                    </button>
                                 </li>                    
                               )
                           }) 
