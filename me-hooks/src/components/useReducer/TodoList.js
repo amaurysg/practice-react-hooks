@@ -1,7 +1,7 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
 
-const TodoList = ({ todos, handleDelete, handleToogle }) => {
+const TodoList = ({ todos, handleDelete, handleToogle, handleUpdate }) => {
   return (
     <>
       <ul className="list-group">
@@ -14,6 +14,7 @@ const TodoList = ({ todos, handleDelete, handleToogle }) => {
               i={i}
               handleDelete={handleDelete}
               handleToogle={handleToogle}
+              handleUpdate={handleUpdate}
             />
           );
         })}

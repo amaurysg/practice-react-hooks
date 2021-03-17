@@ -61,6 +61,16 @@ const TodoApp = () => {
       payload: newToDo,
     });
   };
+  const handleUpdate = (todoId, todoDesc) => {
+    //Action add, type, payload
+    console.log("datos", todoId);
+    console.log("DEEESCC", todoDesc);
+    dispatch({
+      type: "update",
+      payload: todoId,
+      desc: todoDesc,
+    });
+  };
 
   return (
     <div>
@@ -72,6 +82,7 @@ const TodoApp = () => {
             todos={todos}
             handleDelete={handleDelete}
             handleToogle={handleToogle}
+            handleUpdate={handleUpdate}
           />
         </div>
         <div className="col-5">
