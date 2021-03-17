@@ -19,8 +19,9 @@ const TodoListItem = ({
     // setNewDesc(newDesc);
     console.log("newDesc:", newDesc);
     setEditDesc(!editDesc);
+    console.log(newDesc);
   };
-  console.log(newDesc);
+
   return (
     <>
       <li key={todo.id} className="list-group-item">
@@ -80,4 +81,5 @@ const TodoListItem = ({
     </>
   );
 };
+
 export default TodoListItem;
