@@ -1,13 +1,14 @@
 import React from "react";
-import CallBackHook from "./components/memos/CallBackHook";
-import MemoHooks from "./components/memos/MemoHooks";
-import Memorized from "./components/memos/Memorized";
-import Layout from "./components/useLayoutEffect/RealLayoutEffect";
-import TodoApp from "./components/useReducer/TodoApp";
+// import CallBackHook from "./components/memos/CallBackHook";
+// import MemoHooks from "./components/memos/MemoHooks";
+// import Memorized from "./components/memos/Memorized";
+import MainApp from "./components/useContext/MainApp";
+// import Layout from "./components/useLayoutEffect/RealLayoutEffect";
+// import TodoApp from "./components/useReducer/TodoApp";
 // import Characters from './components/examples/Characters'
 // import MultipleCustomsHooks from './components/examples/MultipleCustomsHooks'
 // import Focus from './components/useRef/Focus'
-import RealExampleUseRef from "./components/useRef/RealExampleUseRef";
+// import RealExampleUseRef from "./components/useRef/RealExampleUseRef";
 /* import FormCustomsHooks from './components/useEffect/FormCustomsHooks'
 import Message from './components/useEffect/Message'
 import SimpleForm from './components/useEffect/SimpleForm'
@@ -42,7 +43,9 @@ const HookApp = () => {
 
       {/* <IntroReducer /> */}
 
-      <TodoApp />
+      {/* <TodoApp /> */}
+
+      <MainApp />
     </div>
   );
 };
