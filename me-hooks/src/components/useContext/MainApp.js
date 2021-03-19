@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import AppRouter from "./AppRouter";
 import { UserContext } from "./UserContext";
 
 const MainApp = () => {
-  const user = {
-    id: new Date().getTime(),
-    name: "Amaury",
-    email: "amaurysotog@gmail.com",
-  };
+  //1.Initial obj empty
+  const [user, setUser] = useState({});
 
   return (
-    <UserContext.Provider value={user}>
+    //2.Here envolved whole the appRouter with component UserContext.Provider
+    //3. Share const {user} to all components
+    <UserContext.Provider
+      value={{
+        user,
+        setUser,
+      }}
+    >
       <AppRouter />
     </UserContext.Provider>
   );
