@@ -3,7 +3,7 @@ import { UserContext } from "./UserContext";
 
 const LoginScreen = () => {
   //1.Obtener referencia
-  const { iser, setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   //2. setUser
   const sendUser = () => {
