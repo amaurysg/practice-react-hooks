@@ -8,7 +8,6 @@ describe("", () => {
     const { result } = renderHook(() => useCounter());
     console.log(result.current);
     console.log(result.current.ini);
-    console.log(result.current.dec);
 
     //In this test counter to be (10) initial Value
     expect(result.current.counter).toBe(10);
@@ -20,9 +19,6 @@ describe("", () => {
     //Here called renderHooks from @@testing-library/react-hooks
     //this received useCounter, our hooks.
     const { result } = renderHook(() => useCounter(100));
-    console.log(result.current);
-    console.log(result.current.ini);
-    console.log(result.current.dec);
 
     //In this test counter to be (100) initial Value
     expect(result.current.counter).toBe(100);
