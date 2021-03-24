@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in TodoListItem Debe render correct  1`] = `
+<Fragment>
+  <li
+    className="list-group-item"
+    key="1"
+  >
+    <div>
+      <p
+        className="false "
+        onClick={[Function]}
+      >
+        1
+         - 
+        React
+      </p>
+      <button
+        className="btn btn-outline-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        Update
+      </button>
+      <button
+        className="btn btn-danger"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </div>
+  </li>
+</Fragment>
+`;

@@ -59,14 +59,13 @@ describe("Test in todoReducer", () => {
     expect(state[0].done).toBe(true);
     expect(state[1]).toEqual(demoTodos[1]);
   });
-  test(" Debe debe hacer update del todo", () => {
+  test(" Debe debe hacer update a un todo", () => {
     //The action.payload = ID del todo
     const action = {
       type: "update",
       payload: 1,
       desc: "OTRA COSA",
     };
-
     const state = todoReducer(demoTodos, action);
     // console.log(state);
     expect(state[0].desc).toBe("OTRA COSA");
