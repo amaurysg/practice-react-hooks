@@ -3,13 +3,17 @@ import TodoListItem from "../../../components/useReducer/TodoListItem";
 import demoTodos from "../../fixtures/demoTodos";
 
 describe("Test in TodoListItem", () => {
+  //para llamar funciones usamos jest.fn()
   const handleDelete = jest.fn();
   const handleToogle = jest.fn();
   const handleUpdate = jest.fn();
 
+  //llamamos el componente TodoListItem con sus parametros
   const wrapper = shallow(
     <TodoListItem
+      //demoTodos data falsa para simulaciones
       todo={demoTodos[0]}
+      //cualquier index del objeto
       i={0}
       handleDelete={handleDelete}
       handleToogle={handleToogle}
@@ -18,6 +22,7 @@ describe("Test in TodoListItem", () => {
   );
 
   test("Debe render correct ", () => {
+    //toMatchSnapshot() normal
     expect(wrapper).toMatchSnapshot();
   });
 
