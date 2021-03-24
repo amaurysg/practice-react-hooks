@@ -24,6 +24,9 @@ describe("Test in component MultipleCustomsHooks", () => {
   });
 
   test(" Debe de mostrar Información ", () => {
+    //Nos interesa la información que va a retornar
+    //useFetch ya esta probado.
+    //haremos un mock (ver arriba)
     useFetch.mockReturnValue({
       data: [{ author: "Amaury", quote: "Hola" }],
       loading: false,
