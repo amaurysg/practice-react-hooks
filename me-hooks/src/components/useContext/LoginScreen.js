@@ -3,22 +3,23 @@ import { UserContext } from "./UserContext";
 
 const LoginScreen = () => {
   //1.Obtener referencia
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   //2. setUser
-  const sendUser = () => {
-    console.log("send user...");
-    setUser({
-      id: 123,
-      fname: "Amaury",
-    });
-  };
 
   return (
     <div>
       <h1>Login</h1>
       <hr />
-      <button className="btn btn-primary" onClick={sendUser}>
+      <button
+        className="btn btn-primary"
+        onClick={() => {
+          setUser({
+            id: 123,
+            fname: "Amaury",
+          });
+        }}
+      >
         Log in 😄
       </button>
     </div>
