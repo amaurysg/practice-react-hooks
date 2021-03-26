@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` should  1`] = `
+<div>
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-light"
+  >
+    <div
+      className="container-md"
+    >
+      <a
+        aria-current="page"
+        className="navbar-brand active active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Home
+      </a>
+      <a
+        aria-current={null}
+        className="navbar-brand"
+        href="/about"
+        onClick={[Function]}
+      >
+        About
+      </a>
+      <a
+        aria-current={null}
+        className="navbar-brand"
+        href="/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+    </div>
+  </nav>
+  <div
+    className="container"
+  >
+    <div>
+      <h1>
+        Home Screen
+      </h1>
+      <pre>
+        {
+   "id": 1,
+   "name": "Amaury"
+}
+      </pre>
+    </div>
+  </div>
+</div>
+`;
